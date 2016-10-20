@@ -31,22 +31,21 @@ public class GrovePiExtra {
         Thread.sleep(1000);
         buzz.turnOff();
         
-        buzz.setFrequency(50);
-        
+               
 //        analogWrite(3, 50);
 //        Thread.sleep(1000);
         
-//        buzz.setFrequency(1);
-//        buzz.turnOn();
-//        Thread.sleep(1000);
-//        
-//        buzz.setFrequency(50);
-//        buzz.turnOn();
-//        Thread.sleep(1000);
-//        
-//        buzz.setFrequency(100);
-//        buzz.turnOn();
-//        Thread.sleep(1000);
+        //buzz.setFrequency(1);
+        buzz.setVolume(50);
+        Thread.sleep(1000);
+        
+        //buzz.setFrequency(50);
+        buzz.turnOn();
+        Thread.sleep(1000);
+        
+        //buzz.setFrequency(100);
+        buzz.setVolume(50);
+        Thread.sleep(1000);
         
         //for (float brightness = 0; brightness <= 100; brightness += 10) {
         //    buzz.setVolume(brightness);
