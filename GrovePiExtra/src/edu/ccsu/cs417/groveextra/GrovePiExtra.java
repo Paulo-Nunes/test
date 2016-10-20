@@ -28,15 +28,16 @@ public class GrovePiExtra {
         buzz.turnOff();
         for (float brightness = 0; brightness <= 100; brightness += 10) {
             buzz.setBrightness(brightness);
-            Thread.sleep(1000);
+            Thread.sleep(500);
         }
         buzz.turnOff();
+        
     }
 
     public static void main(String[] args) {
         try {
             // Default is D3
-            int boardNumber = 3;
+            int boardNumber = 14;
             if (args.length == 1) {
                 boardNumber = Integer.parseInt(args[0]);
             }
