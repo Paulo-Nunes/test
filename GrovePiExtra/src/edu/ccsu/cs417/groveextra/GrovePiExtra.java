@@ -49,6 +49,12 @@ public class GrovePiExtra {
         analogWrite(3,50);
         Thread.sleep(1000);
         
+        analogWrite(15,50);
+        Thread.sleep(1000);
+        
+        analogWrite(14,50);
+        Thread.sleep(1000);
+        
 //        for (int i = 0; i < 10; i++) {
 //            buzz.setVolume(25);
 //            Thread.sleep(1);
