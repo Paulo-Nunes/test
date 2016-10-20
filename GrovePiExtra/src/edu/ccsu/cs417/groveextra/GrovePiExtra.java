@@ -40,11 +40,11 @@ public class GrovePiExtra {
         Thread.sleep(1000);
         
         //buzz.setFrequency(50);
-        buzz.turnOn();
+        buzz.setVolume(25);
         Thread.sleep(1000);
         
         //buzz.setFrequency(100);
-        buzz.setVolume(50);
+        buzz.setVolume(10);
         Thread.sleep(1000);
         
         //for (float brightness = 0; brightness <= 100; brightness += 10) {
