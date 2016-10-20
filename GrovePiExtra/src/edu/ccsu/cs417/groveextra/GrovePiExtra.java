@@ -5,7 +5,7 @@
  */
 package edu.ccsu.cs417.groveextra;
 
-import com.dexterind.grovepi.sensors.Led;
+import com.dexterind.grovepi.sensors.Buzzer;
 import com.pi4j.io.i2c.I2CFactory;
 import java.io.IOException;
 
@@ -22,15 +22,15 @@ public class GrovePiExtra {
     }
 
     public void runDemo() throws IOException, InterruptedException, I2CFactory.UnsupportedBusNumberException {
-        Led led = new Led(boardNumber);
-        led.turnOn();
+        Buzzer buzz = new Buzzaer(boardNumber);
+        buzz.turnOn();
         Thread.sleep(1000);
-        led.turnOff();
+        buzz.turnOff();
         for (float brightness = 0; brightness <= 100; brightness += 10) {
-            led.setBrightness(brightness);
+            buzz.setBrightness(brightness);
             Thread.sleep(100);
         }
-        led.turnOff();
+        buzz.turnOff();
     }
 
     public static void main(String[] args) {
