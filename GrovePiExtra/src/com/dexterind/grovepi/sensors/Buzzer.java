@@ -13,6 +13,7 @@ import com.pi4j.io.i2c.I2CFactory;
 
 import static com.pi4j.wiringpi.Gpio.PWM_OUTPUT;
 import static com.pi4j.wiringpi.Gpio.analogWrite;
+import static com.pi4j.wiringpi.Gpio.digitalWrite;
 import static com.pi4j.wiringpi.Gpio.pinMode;
 import com.pi4j.wiringpi.SoftPwm;
 
@@ -32,7 +33,7 @@ public class Buzzer extends AnalogSensor{
         pinMode(pin, PWM_OUTPUT);
         this.pin = pin;
         SoftPwm.softPwmCreate(pin, 0, 100);
-        analogWrite(pin, 250);
+        digitalWrite(pin, 250);
         Thread.sleep(1000);
     }
     
