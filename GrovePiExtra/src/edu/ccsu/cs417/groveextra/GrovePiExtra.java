@@ -46,13 +46,7 @@ public class GrovePiExtra {
 //        //buzz.setFrequency(100);
 //        buzz.setVolume(1);
 //        Thread.sleep(1000);
-        analogWrite(3,50);
-        Thread.sleep(1000);
-        
         analogWrite(15,50);
-        Thread.sleep(1000);
-        
-        analogWrite(14,50);
         Thread.sleep(1000);
         
 //        for (int i = 0; i < 10; i++) {
@@ -68,7 +62,7 @@ public class GrovePiExtra {
     public static void main(String[] args) {
         try {
             // Default is D3
-            int boardNumber = 3;
+            int boardNumber = 15;
             if (args.length == 1) {
                 boardNumber = Integer.parseInt(args[0]);
             }
