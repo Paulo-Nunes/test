@@ -6,6 +6,7 @@
 package edu.ccsu.cs417.groveextra;
 
 import com.dexterind.grovepi.sensors.Buzzer;
+import com.dexterind.grovepi.sensors.Led;
 import com.pi4j.io.i2c.I2CFactory;
 import static com.pi4j.wiringpi.Gpio.OUTPUT;
 import static com.pi4j.wiringpi.Gpio.analogWrite;
@@ -27,6 +28,7 @@ public class GrovePiExtra {
 
     public void runDemo() throws IOException, InterruptedException, I2CFactory.UnsupportedBusNumberException {
         Buzzer buzz = new Buzzer(boardNumber);
+        Led led = new Led(5);
 //        buzz.turnOn();
 //        Thread.sleep(1000);
 //        buzz.turnOff();
@@ -42,6 +44,12 @@ public class GrovePiExtra {
           
           analogWrite(3,1);
           Thread.sleep(1000);
+          
+          digitalWrite(5,1);
+          Thread.sleep(1000);
+          
+          analogWrite(5,1);
+          Thread.sleep(1000);
 //        
 //        buzz.setFrequency(100);
 //        buzz.turnOn();
@@ -52,14 +60,12 @@ public class GrovePiExtra {
         //    Thread.sleep(200);
         //}
         buzz.turnOff();
-        
     }
 
     public static void main(String[] args) {
         try {
             // Default is D3
             //Grovepi grovePi = new Grovepi();
-            pinMode(3, OUTPUT);
             int boardNumber = 3;
             if (args.length == 1) {
                 boardNumber = Integer.parseInt(args[0]);
