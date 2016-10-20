@@ -44,6 +44,9 @@ public class GrovePiExtra {
         Thread.sleep(1000);
         
         //buzz.setFrequency(100);
+        buzz.setVolume(1);
+        Thread.sleep(1000);
+        
         buzz.setVolume(10);
         Thread.sleep(1000);
         
