@@ -26,10 +26,13 @@ public class GrovePiExtra {
         buzz.turnOn();
         Thread.sleep(1000);
         buzz.turnOff();
-        for (float brightness = 0; brightness <= 100; brightness += 10) {
-            buzz.setBrightness(brightness);
-            Thread.sleep(200);
-        }
+        
+        buzz.setVolume(261);
+        Thread.sleep(500);
+        //for (float brightness = 0; brightness <= 100; brightness += 10) {
+        //    buzz.setVolume(brightness);
+        //    Thread.sleep(200);
+        //}
         buzz.turnOff();
         
     }

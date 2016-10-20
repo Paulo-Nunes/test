@@ -31,7 +31,7 @@ public class Buzzer extends AnalogSensor{
         this.write(0);
     }
     
-    public void setBrightness(float percent) throws IOException{
+    public void setVolume(float percent) throws IOException{
         if (percent <= 0){
           turnOff();
         }else if(percent >= 100){
