@@ -45,21 +45,21 @@ public class GrovePiExtra {
           analogWrite(3,1);
           Thread.sleep(1000);
           
-          digitalWrite(5,1);
+          led.turnOn();
           Thread.sleep(1000);
           
-          analogWrite(5,1);
-          Thread.sleep(1000);
-//        
+          
+          
 //        buzz.setFrequency(100);
 //        buzz.turnOn();
 //        Thread.sleep(1000);
         
-        //for (float brightness = 0; brightness <= 100; brightness += 10) {
-        //    buzz.setVolume(brightness);
-        //    Thread.sleep(200);
-        //}
+        for (float brightness = 0; brightness <= 100; brightness += 5) {
+            led.setBrightness(brightness);
+            Thread.sleep(200);
+        }
         buzz.turnOff();
+        led.turnOff();
     }
 
     public static void main(String[] args) {
