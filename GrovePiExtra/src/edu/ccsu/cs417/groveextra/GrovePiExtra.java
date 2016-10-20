@@ -11,6 +11,7 @@ import com.pi4j.io.i2c.I2CFactory;
 import static com.pi4j.wiringpi.Gpio.PWM_OUTPUT;
 import static com.pi4j.wiringpi.Gpio.analogWrite;
 import static com.pi4j.wiringpi.Gpio.pinMode;
+import com.pi4j.wiringpi.SoftPwm;
 import java.io.IOException;
 
 /**
@@ -61,6 +62,8 @@ public class GrovePiExtra {
 
     public static void main(String[] args) {
         try {
+            SoftPwm.softPwmCreate(15, 0, 100);
+            SoftPwm.softPwmWrite(15, 50);
             // Default is D3
             int boardNumber = 15;
             if (args.length == 1) {
