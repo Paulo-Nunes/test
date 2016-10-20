@@ -8,19 +8,32 @@ package com.dexterind.grovepi.sensors;
 
 import java.io.IOException;
 
+import com.dexterind.grovepi.Grovepi;
 import com.dexterind.grovepi.sensors.base.*;
 import com.pi4j.io.i2c.I2CFactory;
+
+import com.pi4j.wiringpi.Gpio;
+import com.pi4j.wiringpi.SoftPwm;
+
 
 /**
  *
  * @author Paulo
  */
 public class Buzzer extends AnalogSensor{
+    private int pin;
     private SensorStatus status = SensorStatus.OFF;
     public final static int MAX_VOLUME = 255;
     
     public Buzzer(int pin) throws IOException, InterruptedException, I2CFactory.UnsupportedBusNumberException{
         super(pin, MAX_VOLUME + 1);
+        this.pin = pin;
+        Gpio.wiringPiSetup();
+        SoftPwm.softPwmCreate(pin, 0, 100);
+    }
+    
+    public void setFrequency(int frequency){
+        SoftPwm.softPwmWrite(pin, frequency);
     }
     
     public void turnOn() throws IOException{
@@ -34,8 +47,8 @@ public class Buzzer extends AnalogSensor{
     public void setVolume(float percent) throws IOException{
         if (percent <= 0){
           turnOff();
-        //}else if(percent >= 100){
-        //  turnOn();
+        }else if(percent >= 100){
+          turnOn();
         }else{
           this.write((int)(MAX_VOLUME * percent/100));
         }

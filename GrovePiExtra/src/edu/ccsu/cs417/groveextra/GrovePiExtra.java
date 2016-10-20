@@ -5,6 +5,7 @@
  */
 package edu.ccsu.cs417.groveextra;
 
+import com.dexterind.grovepi.Grovepi;
 import com.dexterind.grovepi.sensors.Buzzer;
 import com.pi4j.io.i2c.I2CFactory;
 import java.io.IOException;
@@ -27,12 +28,11 @@ public class GrovePiExtra {
         Thread.sleep(1000);
         buzz.turnOff();
         
-        buzz.setVolume(110);
-        Thread.sleep(500);
-        //for (float brightness = 0; brightness <= 100; brightness += 10) {
-        //    buzz.setVolume(brightness);
-        //    Thread.sleep(200);
-        //}
+        
+        for (float brightness = 0; brightness <= 100; brightness += 10) {
+            buzz.setVolume(brightness);
+            Thread.sleep(200);
+        }
         buzz.turnOff();
         
     }
