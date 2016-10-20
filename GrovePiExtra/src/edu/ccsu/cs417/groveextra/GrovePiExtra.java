@@ -31,9 +31,10 @@ public class GrovePiExtra {
         Thread.sleep(1000);
         buzz.turnOff();
         
-        pinMode(3, PWM_OUTPUT);
-        analogWrite(3, 50);
-        Thread.sleep(1000);
+        buzz.setFrequency(50);
+        
+//        analogWrite(3, 50);
+//        Thread.sleep(1000);
         
 //        buzz.setFrequency(1);
 //        buzz.turnOn();
