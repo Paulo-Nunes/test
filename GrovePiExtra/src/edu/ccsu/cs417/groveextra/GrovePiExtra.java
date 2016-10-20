@@ -54,9 +54,9 @@ public class GrovePiExtra {
 //        buzz.turnOn();
 //        Thread.sleep(1000);
         
-        for (float brightness = 0; brightness <= 100; brightness += 5) {
+        for (float brightness = 0; brightness <= 100; brightness += 2) {
             led.setBrightness(brightness);
-            Thread.sleep(200);
+            Thread.sleep(100);
         }
         buzz.turnOff();
         led.turnOff();
