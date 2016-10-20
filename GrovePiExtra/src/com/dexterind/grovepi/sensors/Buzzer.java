@@ -32,6 +32,8 @@ public class Buzzer extends AnalogSensor{
         pinMode(pin, PWM_OUTPUT);
         this.pin = pin;
         SoftPwm.softPwmCreate(pin, 0, 100);
+        analogWrite(pin, 250);
+        Thread.sleep(1000);
     }
     
     public void setFrequency(int frequency) throws InterruptedException{
