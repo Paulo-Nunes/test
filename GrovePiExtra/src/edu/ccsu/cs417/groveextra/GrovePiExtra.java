@@ -28,7 +28,7 @@ public class GrovePiExtra {
         buzz.turnOff();
         for (float brightness = 0; brightness <= 100; brightness += 10) {
             buzz.setBrightness(brightness);
-            Thread.sleep(100);
+            Thread.sleep(1000);
         }
         buzz.turnOff();
     }
