@@ -58,7 +58,7 @@ public class GrovePiExtra {
     public static void main(String[] args) {
         try {
             // Default is D3
-            Grovepi grovePi = new Grovepi();
+            //Grovepi grovePi = new Grovepi();
             pinMode(3, OUTPUT);
             int boardNumber = 3;
             if (args.length == 1) {
