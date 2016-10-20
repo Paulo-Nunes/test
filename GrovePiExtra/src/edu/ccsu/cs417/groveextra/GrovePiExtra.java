@@ -48,10 +48,11 @@ public class GrovePiExtra {
 //        Thread.sleep(1000);
         
         
-        for (int i = 0; i < 1000; i++) {
-            buzz.setVolume(50);
+        for (int i = 0; i < 10; i++) {
+            buzz.setVolume(25);
             Thread.sleep(1);
-            buzz.turnOff();
+            buzz.setVolume(10);
+            //buzz.turnOff();
         }
         buzz.turnOff();
         
