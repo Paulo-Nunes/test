@@ -34,8 +34,8 @@ public class Buzzer extends AnalogSensor{
     public void setVolume(float percent) throws IOException{
         if (percent <= 0){
           turnOff();
-        }else if(percent >= 100){
-          turnOn();
+        //}else if(percent >= 100){
+        //  turnOn();
         }else{
           this.write((int)(MAX_VOLUME * percent/100));
         }
