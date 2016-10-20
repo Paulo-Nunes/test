@@ -37,7 +37,7 @@ public class GrovePiExtra {
     public static void main(String[] args) {
         try {
             // Default is D3
-            int boardNumber = 14;
+            int boardNumber = 3;
             if (args.length == 1) {
                 boardNumber = Integer.parseInt(args[0]);
             }
