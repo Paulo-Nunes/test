@@ -27,8 +27,8 @@ public class Buzzer extends AnalogSensor{
     
     public Buzzer(int pin) throws IOException, InterruptedException, I2CFactory.UnsupportedBusNumberException{
         super(pin, MAX_VOLUME + 1);
-        this.pin = pin;
         //Gpio.wiringPiSetup();
+        this.pin = pin;
         SoftPwm.softPwmCreate(pin, 0, 100);
     }
     
