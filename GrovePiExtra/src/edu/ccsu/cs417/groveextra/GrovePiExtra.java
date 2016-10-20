@@ -5,11 +5,9 @@
  */
 package edu.ccsu.cs417.groveextra;
 
+import com.dexterind.grovepi.Grovepi;
 import com.dexterind.grovepi.sensors.Buzzer;
 import com.pi4j.io.i2c.I2CFactory;
-import static com.pi4j.wiringpi.Gpio.PWM_OUTPUT;
-import static com.pi4j.wiringpi.Gpio.analogWrite;
-import static com.pi4j.wiringpi.Gpio.pinMode;
 import java.io.IOException;
 
 /**
@@ -30,20 +28,17 @@ public class GrovePiExtra {
         Thread.sleep(1000);
         buzz.turnOff();
         
-        pinMode(3, PWM_OUTPUT);
-        analogWrite(3, 50);
+        buzz.setFrequency(1);
+        buzz.turnOn();
         Thread.sleep(1000);
         
+        buzz.setFrequency(50);
+        buzz.turnOn();
+        Thread.sleep(1000);
         
-        //buzz.setFrequency(1);
-        //buzz.setVolume(50);
-        //Thread.sleep(1000);
-        
-        //grovepi.analogWrite(3, 50);
-        
-        //buzz.setFrequency(100);
-        //buzz.turnOn();
-        //Thread.sleep(1000);
+        buzz.setFrequency(100);
+        buzz.turnOn();
+        Thread.sleep(1000);
         
         //for (float brightness = 0; brightness <= 100; brightness += 10) {
         //    buzz.setVolume(brightness);
@@ -56,7 +51,7 @@ public class GrovePiExtra {
     public static void main(String[] args) {
         try {
             // Default is D3
-            int boardNumber = 15;
+            int boardNumber = 3;
             if (args.length == 1) {
                 boardNumber = Integer.parseInt(args[0]);
             }
