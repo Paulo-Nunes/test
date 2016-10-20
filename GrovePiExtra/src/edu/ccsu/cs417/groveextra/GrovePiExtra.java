@@ -22,7 +22,7 @@ public class GrovePiExtra {
     }
 
     public void runDemo() throws IOException, InterruptedException, I2CFactory.UnsupportedBusNumberException {
-        Buzzer buzz = new Buzzaer(boardNumber);
+        Buzzer buzz = new Buzzer(boardNumber);
         buzz.turnOn();
         Thread.sleep(1000);
         buzz.turnOff();
