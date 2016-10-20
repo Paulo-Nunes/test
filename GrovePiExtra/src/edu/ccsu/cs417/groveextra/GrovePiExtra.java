@@ -5,16 +5,9 @@
  */
 package edu.ccsu.cs417.groveextra;
 
-import java.awt.FlowLayout;
-import java.awt.GridLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
+import com.dexterind.grovepi.sensors.Led;
+import com.pi4j.io.i2c.I2CFactory;
+import java.io.IOException;
 
 /**
  *
@@ -22,78 +15,36 @@ import javax.swing.JPanel;
  */
 public class GrovePiExtra {
 
-    private JFrame mainFrame;
-    private JLabel headerLabel;
-    private JLabel statusLabel;
-    private JPanel controlPanel;
+    private final int boardNumber;
 
-    public GrovePiExtra(){
-       prepareGUI();
+    public GrovePiExtra(int boardNumber) {
+        this.boardNumber = boardNumber;
     }
 
-    public static void main(String[] args){
-       GrovePiExtra swingControlDemo = new GrovePiExtra();  
-       swingControlDemo.showEventDemo();       
+    public void runDemo() throws IOException, InterruptedException, I2CFactory.UnsupportedBusNumberException {
+        Led led = new Led(boardNumber);
+        led.turnOn();
+        Thread.sleep(1000);
+        led.turnOff();
+        for (float brightness = 0; brightness <= 100; brightness += 10) {
+            led.setBrightness(brightness);
+            Thread.sleep(100);
+        }
+        led.turnOff();
     }
 
-    private void prepareGUI(){
-       mainFrame = new JFrame("Java SWING Examples");
-       mainFrame.setSize(400,400);
-       mainFrame.setLayout(new GridLayout(3, 1));
-
-       headerLabel = new JLabel("",JLabel.CENTER );
-       statusLabel = new JLabel("",JLabel.CENTER);        
-
-       statusLabel.setSize(350,100);
-       mainFrame.addWindowListener(new WindowAdapter() {
-          public void windowClosing(WindowEvent windowEvent){
-                 System.exit(0);
-          }        
-       });    
-       controlPanel = new JPanel();
-       controlPanel.setLayout(new FlowLayout());
-
-       mainFrame.add(headerLabel);
-       mainFrame.add(controlPanel);
-       mainFrame.add(statusLabel);
-       mainFrame.setVisible(true);  
-    }
-
-    private void showEventDemo(){
-       headerLabel.setText("Control in action: Button"); 
-
-       JButton okButton = new JButton("OK");
-       JButton submitButton = new JButton("Submit");
-       JButton cancelButton = new JButton("Cancel");
-
-       okButton.setActionCommand("OK");
-       submitButton.setActionCommand("Submit");
-       cancelButton.setActionCommand("Cancel");
-
-       okButton.addActionListener(new ButtonClickListener()); 
-       submitButton.addActionListener(new ButtonClickListener()); 
-       cancelButton.addActionListener(new ButtonClickListener()); 
-
-       controlPanel.add(okButton);
-       controlPanel.add(submitButton);
-       controlPanel.add(cancelButton);       
-
-       mainFrame.setVisible(true);  
-    }
-
-    private class ButtonClickListener implements ActionListener{
-       public void actionPerformed(ActionEvent e) {
-          String command = e.getActionCommand();  
-          if( command.equals( "OK" ))  {
-             statusLabel.setText("Ok Button clicked.");
-          }
-          else if( command.equals( "Submit" ) )  {
-             statusLabel.setText("Submit Button clicked."); 
-          }
-          else  {
-             statusLabel.setText("Cancel Button clicked.");
-          }  	
-       }		
+    public static void main(String[] args) {
+        try {
+            // Default is D3
+            int boardNumber = 3;
+            if (args.length == 1) {
+                boardNumber = Integer.parseInt(args[0]);
+            }
+            GrovePiExtra ledDemo = new GrovePiExtra(boardNumber);
+            ledDemo.runDemo();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
     
 }
