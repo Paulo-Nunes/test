@@ -5,9 +5,12 @@
  */
 package edu.ccsu.cs417.groveextra;
 
+import com.dexterind.grovepi.Grovepi;
 import com.dexterind.grovepi.sensors.Buzzer;
 import com.pi4j.io.i2c.I2CFactory;
+import static com.pi4j.wiringpi.Gpio.OUTPUT;
 import static com.pi4j.wiringpi.Gpio.digitalWrite;
+import static com.pi4j.wiringpi.Gpio.pinMode;
 import java.io.IOException;
 
 /**
@@ -55,6 +58,8 @@ public class GrovePiExtra {
     public static void main(String[] args) {
         try {
             // Default is D3
+            Grovepi grovePi = new Grovepi();
+            pinMode(3, OUTPUT);
             int boardNumber = 3;
             if (args.length == 1) {
                 boardNumber = Integer.parseInt(args[0]);
