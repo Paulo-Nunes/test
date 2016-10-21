@@ -39,7 +39,7 @@ public class GrovePiExtra {
 //        Thread.sleep(1000);
 //        
 //        buzz.setFrequency(50);
-//        buzz.turnOn();
+        buzz.turnOn();
           digitalWrite(3,1);
           Thread.sleep(1000);
           
