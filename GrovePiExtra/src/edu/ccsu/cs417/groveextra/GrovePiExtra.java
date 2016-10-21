@@ -68,10 +68,10 @@ else
   }
 }
 
-    public void main(String[] args) {
-        try {
-            setup();
-            loop();
+    public static void main(String[] args) {
+        try {GrovePiExtra gpe = new GrovePiExtra();
+            gpe.setup();
+            gpe.loop();
         } catch (Exception e) {
             e.printStackTrace();
         }
