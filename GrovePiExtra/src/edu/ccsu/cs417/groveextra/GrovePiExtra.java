@@ -44,6 +44,9 @@ public class GrovePiExtra {
 
         led.setBrightness(20);
         Thread.sleep(1000);
+        
+        led.turnOn();
+        Thread.sleep(1000);
 //          
 //          analogWrite(3,1);
 //          Thread.sleep(1000);
