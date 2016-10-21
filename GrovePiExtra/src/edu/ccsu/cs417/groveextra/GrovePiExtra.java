@@ -27,6 +27,8 @@ public class GrovePiExtra {
     public void runDemo() throws IOException, InterruptedException, I2CFactory.UnsupportedBusNumberException {
         Buzzer buzz = new Buzzer(boardNumber);
         Led led = new Led(5);
+        Led led2 = new Led(6);
+
 //        buzz.setVolume(10);
 //        Thread.sleep(1000);
 //        buzz.setVolume(100);
@@ -44,8 +46,19 @@ public class GrovePiExtra {
           analogWrite(3,1);
           Thread.sleep(1000);
           
-          led.turnOn();
+          digitalWrite(5,1);
           Thread.sleep(1000);
+          
+          analogWrite(5,1);
+          Thread.sleep(1000);
+          
+          digitalWrite(6,1);
+          Thread.sleep(1000);
+          
+          analogWrite(6,1);
+          Thread.sleep(1000);
+          
+
           
     
           
@@ -58,12 +71,13 @@ public class GrovePiExtra {
 //            Thread.sleep(100);
 //        }
         
-        for (float brightness = 0; brightness <= 100; brightness += 1) {
-            buzz.setVolume(brightness);
-            Thread.sleep(100);
-        }
+//        for (float brightness = 0; brightness <= 100; brightness += 1) {
+//            buzz.setVolume(brightness);
+//            Thread.sleep(100);
+//        }
         buzz.turnOff();
         led.turnOff();
+        led2.turnOff();
     }
 
     public static void main(String[] args) {
