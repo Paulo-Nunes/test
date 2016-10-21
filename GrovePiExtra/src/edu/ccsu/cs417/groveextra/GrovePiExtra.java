@@ -8,7 +8,6 @@ package edu.ccsu.cs417.groveextra;
 import com.dexterind.grovepi.sensors.Buzzer;
 import com.dexterind.grovepi.sensors.Led;
 import com.pi4j.io.i2c.I2CFactory;
-import static com.pi4j.wiringpi.Gpio.analogWrite;
 import static com.pi4j.wiringpi.Gpio.digitalWrite;
 import java.io.IOException;
 
@@ -26,7 +25,7 @@ public class GrovePiExtra {
 
     public void runDemo() throws IOException, InterruptedException, I2CFactory.UnsupportedBusNumberException {
         Buzzer buzz = new Buzzer(boardNumber);
-        Led led = new Led(5);
+        Led led = new Led(1);
         Led led2 = new Led(6);
 
 //        buzz.setVolume(10);
@@ -39,9 +38,12 @@ public class GrovePiExtra {
 //        Thread.sleep(1000);
 //        
 //        buzz.setFrequency(50);
-        //buzz.turnOn();
-//          digitalWrite(3,1);
-//          Thread.sleep(1000);
+
+        led.turnOn();
+        Thread.sleep(1000);
+
+        led.setBrightness(20);
+        Thread.sleep(1000);
 //          
 //          analogWrite(3,1);
 //          Thread.sleep(1000);
@@ -58,9 +60,9 @@ public class GrovePiExtra {
 //          analogWrite(6,1);
 //          Thread.sleep(1000);
 
-          buzz.turnOn();
-        Thread.sleep(1000);
-    
+          //buzz.turnOn();
+        //Thread.sleep(1000);
+    //led.turnOff();
           
 //        buzz.setFrequency(100);
 //        buzz.turnOn();
@@ -71,13 +73,13 @@ public class GrovePiExtra {
 //            Thread.sleep(100);
 //        }
         
-        for (int i = 0; i <= 20; i++) {
-            digitalWrite(i,1);
-            Thread.sleep(100);
-
-            analogWrite(i,1);
-            Thread.sleep(100);
-        }
+//        for (int i = 0; i <= 20; i++) {
+//            digitalWrite(i,1);
+//            Thread.sleep(100);
+//
+//            analogWrite(i,1);
+//            Thread.sleep(100);
+//        }
         buzz.turnOff();
         led.turnOff();
         led2.turnOff();

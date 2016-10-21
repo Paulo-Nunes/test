@@ -48,7 +48,7 @@ public class Buzzer extends AnalogSensor{
     }
     
     public void turnOn() throws IOException{
-        this.write(MAX_VOLUME+100);
+        this.write(MAX_VOLUME);
     }
     
     public void turnOff() throws IOException{
