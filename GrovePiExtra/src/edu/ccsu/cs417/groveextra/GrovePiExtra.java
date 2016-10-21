@@ -5,61 +5,96 @@
  */
 package edu.ccsu.cs417.groveextra;
 
-import com.pi4j.io.gpio.GpioController;
-import com.pi4j.io.gpio.GpioFactory;
-import com.pi4j.io.gpio.GpioPinDigitalOutput;
-import com.pi4j.io.gpio.PinState;
-import com.pi4j.io.gpio.RaspiPin;
+import com.dexterind.grovepi.sensors.Buzzer;
+import com.dexterind.grovepi.sensors.Led;
+import com.pi4j.io.i2c.I2CFactory;
+import static com.pi4j.wiringpi.Gpio.analogWrite;
+import static com.pi4j.wiringpi.Gpio.digitalWrite;
+import java.io.IOException;
 
 /**
  *
  * @author Paulo
  */
 public class GrovePiExtra {
-public static void main(String[] args) throws InterruptedException {
 
-        System.out.println("<--Pi4J--> GPIO Control Example ... started.");
+    private final int boardNumber;
 
-        // create gpio controller
-        final GpioController gpio = GpioFactory.getInstance();
+    public GrovePiExtra(int boardNumber) {
+        this.boardNumber = boardNumber;
+    }
 
-        // provision gpio pin #01 as an output pin and turn on
-        final GpioPinDigitalOutput pin = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_01, "MyLED", PinState.HIGH);
+    public void runDemo() throws IOException, InterruptedException, I2CFactory.UnsupportedBusNumberException {
+        Buzzer buzz = new Buzzer(boardNumber);
+        Led led = new Led(5);
+        Led led2 = new Led(6);
 
-        // set shutdown state for this pin
-        pin.setShutdownOptions(true, PinState.LOW);
+//        buzz.setVolume(10);
+//        Thread.sleep(1000);
+//        buzz.setVolume(100);
+//        buzz.turnOff();
+        
+//        buzz.setFrequency(1);
+//        buzz.turnOn();
+//        Thread.sleep(1000);
+//        
+//        buzz.setFrequency(50);
+        //buzz.turnOn();
+//          digitalWrite(3,1);
+//          Thread.sleep(1000);
+//          
+//          analogWrite(3,1);
+//          Thread.sleep(1000);
+//          
+//          digitalWrite(5,1);
+//          Thread.sleep(1000);
+//          
+//          analogWrite(5,1);
+//          Thread.sleep(1000);
+//          
+//          digitalWrite(6,1);
+//          Thread.sleep(1000);
+//          
+//          analogWrite(6,1);
+//          Thread.sleep(1000);
 
-        System.out.println("--> GPIO state should be: ON");
+          
+    
+          
+//        buzz.setFrequency(100);
+//        buzz.turnOn();
+//        Thread.sleep(1000);
+        
+//        for (float brightness = 0; brightness <= 100; brightness += 2) {
+//            led.setBrightness(brightness);
+//            Thread.sleep(100);
+//        }
+        
+        for (int i = 0; i <= 20; i++) {
+            digitalWrite(i,1);
+            Thread.sleep(100);
 
-        Thread.sleep(5000);
+            analogWrite(i,1);
+            Thread.sleep(100);
+        }
+        buzz.turnOff();
+        led.turnOff();
+        led2.turnOff();
+    }
 
-        // turn off gpio pin #01
-        pin.low();
-        System.out.println("--> GPIO state should be: OFF");
-
-        Thread.sleep(5000);
-
-        // toggle the current state of gpio pin #01 (should turn on)
-        pin.toggle();
-        System.out.println("--> GPIO state should be: ON");
-
-        Thread.sleep(5000);
-
-        // toggle the current state of gpio pin #01  (should turn off)
-        pin.toggle();
-        System.out.println("--> GPIO state should be: OFF");
-
-        Thread.sleep(5000);
-
-        // turn on gpio pin #01 for 1 second and then off
-        System.out.println("--> GPIO state should be: ON for only 1 second");
-        pin.pulse(1000, true); // set second argument to 'true' use a blocking call
-
-        // stop all GPIO activity/threads by shutting down the GPIO controller
-        // (this method will forcefully shutdown all GPIO monitoring threads and scheduled tasks)
-        gpio.shutdown();
-
-        System.out.println("Exiting ControlGpioExample");
-}
+    public static void main(String[] args) {
+        try {
+            // Default is D3
+            //Grovepi grovePi = new Grovepi();
+            int boardNumber = 3;
+            if (args.length == 1) {
+                boardNumber = Integer.parseInt(args[0]);
+            }
+            GrovePiExtra ledDemo = new GrovePiExtra(boardNumber);
+            ledDemo.runDemo();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
     
 }
