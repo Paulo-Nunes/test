@@ -9,7 +9,7 @@ import com.dexterind.grovepi.sensors.Buzzer;
 import com.dexterind.grovepi.sensors.Led;
 import com.pi4j.io.i2c.I2CFactory;
 import static com.pi4j.wiringpi.Gpio.pwmWrite;
-import static com.pi4j.wiringpi.Gpio.wiringPiSetup;
+import static com.pi4j.wiringpi.Gpio.wiringPiSetupGpio;
 import static com.pi4j.wiringpi.SoftPwm.softPwmCreate;
 import static com.pi4j.wiringpi.SoftPwm.softPwmWrite;
 import java.io.IOException;
@@ -46,9 +46,10 @@ public class GrovePiExtra {
 //        Thread.sleep(1000);
 
 
-            wiringPiSetup();
-            //wiringPiSetupGpio();
+            //wiringPiSetup();
+            wiringPiSetupGpio();
             //wiringPiSetupPhys();
+            //wiringPiSetupSys();
             Thread.sleep(100);
             
             softPwmCreate(3, 0, 100);
