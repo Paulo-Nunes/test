@@ -12,7 +12,7 @@ import static com.pi4j.wiringpi.Gpio.millis;
 import static com.pi4j.wiringpi.Gpio.pwmSetClock;
 import static com.pi4j.wiringpi.Gpio.pwmSetRange;
 import static com.pi4j.wiringpi.Gpio.pwmWrite;
-import static com.pi4j.wiringpi.Gpio.wiringPiSetup;
+import static com.pi4j.wiringpi.Gpio.wiringPiSetupGpio;
 import static com.pi4j.wiringpi.SoftPwm.softPwmCreate;
 import static com.pi4j.wiringpi.SoftPwm.softPwmWrite;
 import java.io.IOException;
@@ -49,8 +49,8 @@ public class GrovePiExtra {
 //        Thread.sleep(1000);
 
 
-            System.out.println("wiringPiSetUp():  "+wiringPiSetup());
-            //wiringPiSetupGpio();
+            //System.out.println("wiringPiSetUp():  "+wiringPiSetup());
+            System.out.println("wiringPiSetUp():  "+wiringPiSetupGpio());
             //wiringPiSetupPhys();
             //wiringPiSetupSys();
             Thread.sleep(1000);
