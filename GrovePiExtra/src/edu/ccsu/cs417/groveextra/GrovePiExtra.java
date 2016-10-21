@@ -53,34 +53,34 @@ public class GrovePiExtra {
             //System.out.println("wiringPiSetUp():  "+wiringPiSetupGpio());
             //System.out.println("wiringPiSetUp():  "+wiringPiSetupPhys());
             System.out.println("wiringPiSetUp():  "+wiringPiSetupSys());
-            Thread.sleep(1000);
-            buzz.turnOn();
-            Thread.sleep(1000);
-            buzz.turnOff();
+            Thread.sleep(100);
+            //buzz.turnOn();
+            //Thread.sleep(1000);
+            //buzz.turnOff();
             
             System.out.println("softPwmCreate():  "+softPwmCreate(3, 40, 100));
             Thread.sleep(100);
             
-            buzz.turnOn();
-            Thread.sleep(1000);
+            //buzz.turnOn();
+            //Thread.sleep(1000);
             softPwmWrite(3, 50);
             System.out.println("softPwmWrite()");
-            Thread.sleep(1000);
-            buzz.turnOff();
-            Thread.sleep(1000);
+            Thread.sleep(100);
+            //buzz.turnOff();
+            //Thread.sleep(1000);
             
             buzz.turnOn();
-            Thread.sleep(1000);
-            pwmSetRange (100);
+            Thread.sleep(500);
+            pwmSetRange (500);
             System.out.println(millis ());
-            pwmSetClock(4);
-            Thread.sleep(1000);
+            pwmSetClock(40);
+            Thread.sleep(1500);
              System.out.println("pwmwmWrite(3, 50)");
             pwmWrite(3, 50);
-            Thread.sleep(1000);
+            Thread.sleep(2000);
             System.out.println("pwmwmWrite(3, 255)");
             pwmWrite(3, 255);
-            Thread.sleep(1000);
+            Thread.sleep(2000);
             buzz.turnOff();
             
 
