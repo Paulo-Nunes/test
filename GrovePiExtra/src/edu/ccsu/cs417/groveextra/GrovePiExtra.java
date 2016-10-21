@@ -53,6 +53,7 @@ public class GrovePiExtra {
             Thread.sleep(1000);
             buzz.turnOn();
             Thread.sleep(1000);
+            buzz.turnOff();
             
             softPwmCreate(3, 0, 100);
             Thread.sleep(100);
