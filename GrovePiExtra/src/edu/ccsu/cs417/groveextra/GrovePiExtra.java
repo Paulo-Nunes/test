@@ -49,7 +49,8 @@ public class GrovePiExtra {
             //wiringPiSetup();
             //wiringPiSetupGpio();
             //wiringPiSetupPhys();
-            wiringPiSetupSys();
+            //wiringPiSetupSys();
+            buzz.turnOn();
             Thread.sleep(100);
             
             softPwmCreate(3, 0, 100);
