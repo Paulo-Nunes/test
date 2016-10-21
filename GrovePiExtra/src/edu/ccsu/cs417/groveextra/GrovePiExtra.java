@@ -8,6 +8,7 @@ package edu.ccsu.cs417.groveextra;
 import com.dexterind.grovepi.sensors.Buzzer;
 import com.dexterind.grovepi.sensors.Led;
 import com.pi4j.io.i2c.I2CFactory;
+import static com.pi4j.wiringpi.Gpio.millis;
 import static com.pi4j.wiringpi.Gpio.pwmSetClock;
 import static com.pi4j.wiringpi.Gpio.pwmSetRange;
 import static com.pi4j.wiringpi.Gpio.pwmWrite;
@@ -71,6 +72,7 @@ public class GrovePiExtra {
             buzz.turnOn();
             Thread.sleep(1000);
             pwmSetRange (100);
+            System.out.println(millis ());
             pwmSetClock(4);
             Thread.sleep(1000);
              System.out.println("pwmwmWrite(3, 50)");
