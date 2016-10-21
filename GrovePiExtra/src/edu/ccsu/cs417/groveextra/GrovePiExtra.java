@@ -25,7 +25,7 @@ public class GrovePiExtra {
 
     public void runDemo() throws IOException, InterruptedException, I2CFactory.UnsupportedBusNumberException {
         Buzzer buzz = new Buzzer(boardNumber);
-        Led led = new Led(2);
+        Led led = new Led(14);
         Led led2 = new Led(6);
 
 //        buzz.setVolume(10);
