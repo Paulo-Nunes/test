@@ -39,14 +39,15 @@ public class GrovePiExtra {
 //        
 //        buzz.setFrequency(50);
 
-        led.turnOn();
-        Thread.sleep(1000);
+//        led.turnOn();
+//        Thread.sleep(1000);
+        for(int i = 0; i<255; i+=2){
+            analogWrite(14,i);
+            Thread.sleep(100);
 
-        analogWrite(14,20);
-        Thread.sleep(1000);
-        
-        led.turnOn();
-        Thread.sleep(1000);
+        }
+//        led.turnOn();
+//        Thread.sleep(1000);
 //          
 //          analogWrite(3,1);
 //          Thread.sleep(1000);
