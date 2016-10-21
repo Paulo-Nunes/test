@@ -39,24 +39,24 @@ public class GrovePiExtra {
 //        Thread.sleep(1000);
 //        
 //        buzz.setFrequency(50);
-        buzz.turnOn();
-          digitalWrite(3,1);
-          Thread.sleep(1000);
-          
-          analogWrite(3,1);
-          Thread.sleep(1000);
-          
-          digitalWrite(5,1);
-          Thread.sleep(1000);
-          
-          analogWrite(5,1);
-          Thread.sleep(1000);
-          
-          digitalWrite(6,1);
-          Thread.sleep(1000);
-          
-          analogWrite(6,1);
-          Thread.sleep(1000);
+        //buzz.turnOn();
+//          digitalWrite(3,1);
+//          Thread.sleep(1000);
+//          
+//          analogWrite(3,1);
+//          Thread.sleep(1000);
+//          
+//          digitalWrite(5,1);
+//          Thread.sleep(1000);
+//          
+//          analogWrite(5,1);
+//          Thread.sleep(1000);
+//          
+//          digitalWrite(6,1);
+//          Thread.sleep(1000);
+//          
+//          analogWrite(6,1);
+//          Thread.sleep(1000);
           
 
           
@@ -71,10 +71,13 @@ public class GrovePiExtra {
 //            Thread.sleep(100);
 //        }
         
-//        for (float brightness = 0; brightness <= 100; brightness += 1) {
-//            buzz.setVolume(brightness);
-//            Thread.sleep(100);
-//        }
+        for (int i = 0; i <= 20; i++) {
+            digitalWrite(i,1);
+            Thread.sleep(500);
+
+            analogWrite(i,1);
+            Thread.sleep(500);
+        }
         buzz.turnOff();
         led.turnOff();
         led2.turnOff();
