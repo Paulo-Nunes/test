@@ -58,7 +58,8 @@ public class GrovePiExtra {
 //          analogWrite(6,1);
 //          Thread.sleep(1000);
 
-          
+          buzz.turnOn();
+        Thread.sleep(1000);
     
           
 //        buzz.setFrequency(100);
