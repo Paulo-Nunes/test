@@ -8,7 +8,7 @@ package edu.ccsu.cs417.groveextra;
 import com.dexterind.grovepi.sensors.Buzzer;
 import com.dexterind.grovepi.sensors.Led;
 import com.pi4j.io.i2c.I2CFactory;
-import static com.pi4j.wiringpi.Gpio.digitalWrite;
+import static com.pi4j.wiringpi.Gpio.pwmWrite;
 import java.io.IOException;
 
 /**
@@ -41,11 +41,18 @@ public class GrovePiExtra {
 
 //        led.turnOn();
 //        Thread.sleep(1000);
-        for(int i = 0; i<255; i+=2){
-            digitalWrite(14,i);
-            Thread.sleep(100);
 
-        }
+
+            pwmWrite(3, 50);
+            Thread.sleep(1000);
+            pwmWrite(3, 255);
+            Thread.sleep(1000);
+
+//        for(int i = 0; i<255; i+=2){
+//            analogWrite(14,5,4,4);
+//            Thread.sleep(100);
+//
+//        }
 //        led.turnOn();
 //        Thread.sleep(1000);
 //          
