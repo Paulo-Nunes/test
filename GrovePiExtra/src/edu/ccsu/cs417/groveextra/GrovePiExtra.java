@@ -51,18 +51,18 @@ public class GrovePiExtra {
             //wiringPiSetupPhys();
             //wiringPiSetupSys();
             buzz.turnOn();
-            Thread.sleep(100);
+            //Thread.sleep(100);
             
-            softPwmCreate(3, 0, 100);
-            Thread.sleep(100);
+            //softPwmCreate(3, 0, 100);
+            //Thread.sleep(100);
             
-            softPwmWrite(3, 50);
-            Thread.sleep(100);
+            //softPwmWrite(3, 50);
+            //Thread.sleep(100);
             
             //buzz.turnOn();
-            pwmWrite(3, 50);
-            Thread.sleep(1000);
-            pwmWrite(3, 255);
+            //pwmWrite(3, 50);
+            //Thread.sleep(1000);
+            //pwmWrite(3, 255);
             Thread.sleep(1000);
             //buzz.turnOff();
 
