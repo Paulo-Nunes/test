@@ -85,9 +85,9 @@ public class GrovePiExtra {
             System.out.println("Analog write");
             Gpio.analogWrite(3, 50);
             Thread.sleep(1000);
-            Gpio.gpioClockSet(3, 255);
-            Gpio.analogWrite(3, 50);
-            Thread.sleep(1000);
+            //Gpio.gpioClockSet(3, 255);
+            //Gpio.analogWrite(3, 50);
+            //Thread.sleep(1000);
             Gpio.pwmSetClock(4);
             Gpio.analogWrite(3, 50);
             Thread.sleep(1000);
