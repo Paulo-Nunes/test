@@ -7,6 +7,7 @@ package edu.ccsu.cs417.groveextra;
 
 import com.dexterind.grovepi.sensors.Buzzer;
 import com.dexterind.grovepi.sensors.Led;
+import com.dexterind.grovepi.sensors.base.AnalogSensor;
 import com.pi4j.io.i2c.I2CFactory;
 import com.pi4j.wiringpi.Gpio;
 import java.io.IOException;
@@ -28,6 +29,7 @@ public class GrovePiExtra {
         Buzzer buzz = new Buzzer(boardNumber);
         Led led = new Led(3);
         Led led2 = new Led(5);
+        AnalogSensor sensor = new AnalogSensor(3, 4);
 
 //        buzz.setVolume(10);
 //        Thread.sleep(1000);
@@ -58,39 +60,39 @@ public class GrovePiExtra {
             //System.out.println("softPwmCreate():  "+softPwmCreate(3, 40, 100));
             //Thread.sleep(100);
             
-            Gpio.analogWrite(3,10);
+            sensor.write(10);
             System.out.println("10");
             Thread.sleep(1000);
             
-            Gpio.analogWrite(3,20);
+            sensor.write(20);
             System.out.println("20");
             Thread.sleep(1000);
             
-            Gpio.analogWrite(3,50);
+            sensor.write(50);
             System.out.println("50");
             Thread.sleep(1000);
             
-            Gpio.analogWrite(3,70);
+            sensor.write(70);
             System.out.println("70");
             Thread.sleep(1000);
             
             
-            Gpio.analogWrite(3,100);
+            sensor.write(100);
             System.out.println("100");
             Thread.sleep(1000);
             
-            Gpio.analogWrite(3,150);
+            sensor.write(150);
             System.out.println("150");
             Thread.sleep(1000);
             
-            Gpio.analogWrite(3,255);
+            sensor.write(255);
             System.out.println("255");
             Thread.sleep(1000);
             
-            Gpio.analogWrite(3,1024);
+            sensor.write(1024);
             System.out.println("1024");
             Thread.sleep(1000);
-            Gpio.analogWrite(3,0);
+            sensor.write(0);
             
             
             
