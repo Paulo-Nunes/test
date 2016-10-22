@@ -224,7 +224,7 @@ public class GrovePiExtra {
     }
 
     public static void main(String[] args) {
-        try {
+        try {BananaPiGpioProvider provider = new BananaPiGpioProvider();
             // Default is D3
             //Grovepi grovePi = new Grovepi();
             int boardNumber = 3;
