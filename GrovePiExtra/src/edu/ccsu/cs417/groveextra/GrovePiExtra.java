@@ -66,7 +66,7 @@ public class GrovePiExtra {
                 for(int j = 0; j<5; j++){
                     sensor.write(255);
                     Thread.sleep(i);
-                    sensor.write(255);
+                    sensor.write(0);
                 }
             }
             
