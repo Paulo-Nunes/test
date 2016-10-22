@@ -9,9 +9,6 @@ import com.dexterind.grovepi.sensors.Buzzer;
 import com.dexterind.grovepi.sensors.Led;
 import com.pi4j.io.i2c.I2CFactory;
 import com.pi4j.wiringpi.Gpio;
-import static com.pi4j.wiringpi.Gpio.millis;
-import static com.pi4j.wiringpi.SoftPwm.softPwmCreate;
-import static com.pi4j.wiringpi.SoftPwm.softPwmWrite;
 import java.io.IOException;
 
 /**
@@ -29,8 +26,8 @@ public class GrovePiExtra {
     public void runDemo() throws IOException, InterruptedException, I2CFactory.UnsupportedBusNumberException {
         
         Buzzer buzz = new Buzzer(boardNumber);
-        Led led = new Led(14);
-        Led led2 = new Led(6);
+        Led led = new Led(3);
+        Led led2 = new Led(5);
 
 //        buzz.setVolume(10);
 //        Thread.sleep(1000);
@@ -47,51 +44,88 @@ public class GrovePiExtra {
 //        Thread.sleep(1000);
 
 
+
+
             //System.out.println("wiringPiSetUp():  "+wiringPiSetup());
             //System.out.println("wiringPiSetUp():  "+wiringPiSetupGpio());
             //System.out.println("wiringPiSetUp():  "+wiringPiSetupPhys());
-            System.out.println("wiringPiSetUp():  "+Gpio.wiringPiSetupSys());
-            Thread.sleep(100);
+            //////System.out.println("wiringPiSetUp():  "+Gpio.wiringPiSetupSys());
+            //Thread.sleep(100);
             //buzz.turnOn();
             //Thread.sleep(1000);
             //buzz.turnOff();
             
-            System.out.println("softPwmCreate():  "+softPwmCreate(3, 40, 100));
-            Thread.sleep(100);
+            //System.out.println("softPwmCreate():  "+softPwmCreate(3, 40, 100));
+            //Thread.sleep(100);
             
-            //buzz.turnOn();
-            //Thread.sleep(1000);
-            softPwmWrite(3, 50);
-            System.out.println("softPwmWrite()");
-            Thread.sleep(100);
-            //buzz.turnOff();
-            //Thread.sleep(1000);
-            
-            buzz.turnOn();
-            Thread.sleep(500);
-            Gpio.pwmSetRange (500);
-            System.out.println(millis ());
-            Gpio.pwmSetClock(40);
-            Thread.sleep(1500);
-             System.out.println("pwmwmWrite(3, 50)");
-            Gpio.pwmWrite(3, 50);
-            Thread.sleep(2000);
-            System.out.println("pwmwmWrite(3, 255)");
-            Gpio.pwmWrite(3, 255);
-            Thread.sleep(2000);
-            
+            Gpio.analogWrite(3,10);
+            System.out.println("10");
             Thread.sleep(1000);
             
-            System.out.println("Analog write");
-            Gpio.analogWrite(3, 1);
+            Gpio.analogWrite(3,20);
+            System.out.println("20");
             Thread.sleep(1000);
-            //Gpio.gpioClockSet(3, 255);
-            //Gpio.analogWrite(3, 50);
-            //Thread.sleep(1000);
-            Gpio.pwmSetClock(100);
-            Gpio.analogWrite(3, 1024);
+            
+            Gpio.analogWrite(3,50);
+            System.out.println("50");
             Thread.sleep(1000);
-buzz.turnOff();
+            
+            Gpio.analogWrite(3,70);
+            System.out.println("70");
+            Thread.sleep(1000);
+            
+            
+            Gpio.analogWrite(3,100);
+            System.out.println("100");
+            Thread.sleep(1000);
+            
+            Gpio.analogWrite(3,150);
+            System.out.println("150");
+            Thread.sleep(1000);
+            
+            Gpio.analogWrite(3,255);
+            System.out.println("255");
+            Thread.sleep(1000);
+            
+            Gpio.analogWrite(3,1024);
+            System.out.println("1024");
+            Thread.sleep(1000);
+            
+            
+            
+//            //buzz.turnOn();
+//            //Thread.sleep(1000);
+//            softPwmWrite(3, 50);
+//            System.out.println("softPwmWrite()");
+//            Thread.sleep(100);
+//            //buzz.turnOff();
+//            //Thread.sleep(1000);
+            
+//            buzz.turnOn();
+//            Thread.sleep(500);
+//            Gpio.pwmSetRange (500);
+//            System.out.println(millis ());
+//            Gpio.pwmSetClock(40);
+//            Thread.sleep(1500);
+//             System.out.println("pwmwmWrite(3, 50)");
+//            Gpio.pwmWrite(3, 50);
+//            Thread.sleep(2000);
+//            System.out.println("pwmwmWrite(3, 255)");
+//            Gpio.pwmWrite(3, 255);
+//            Thread.sleep(2000);
+//            
+//            Thread.sleep(1000);
+//            
+//            System.out.println("Analog write");
+//            Gpio.analogWrite(3, 1);
+//            Thread.sleep(1000);
+//            //Gpio.gpioClockSet(3, 255);
+//            //Gpio.analogWrite(3, 50);
+//            //Thread.sleep(1000);
+//            Gpio.pwmSetClock(100);
+//            Gpio.analogWrite(3, 1024);
+//            Thread.sleep(1000);
+//buzz.turnOff();
 //        for(int i = 0; i<255; i+=2){
 //            analogWrite(14,5,4,4);
 //            Thread.sleep(100);
