@@ -46,7 +46,7 @@ public class GrovePiExtra {
 //        Thread.sleep(1000);
 
 Gpio.analogWrite(3, 50);
-
+Thread.sleep(1000);
 
             //System.out.println("wiringPiSetUp():  "+wiringPiSetup());
             //System.out.println("wiringPiSetUp():  "+wiringPiSetupGpio());
