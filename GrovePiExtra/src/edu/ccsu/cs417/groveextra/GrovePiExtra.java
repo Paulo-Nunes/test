@@ -7,10 +7,16 @@ package edu.ccsu.cs417.groveextra;
 
 import com.dexterind.grovepi.sensors.Buzzer;
 import com.dexterind.grovepi.sensors.Led;
+import com.dexterind.grovepi.sensors.Thing;
 import com.dexterind.grovepi.sensors.base.AnalogSensor;
+import com.pi4j.io.gpio.PinMode;
+import com.pi4j.io.gpio.RaspiGpioProvider;
+import com.pi4j.io.gpio.impl.GpioControllerImpl;
+import com.pi4j.io.gpio.impl.GpioPinImpl;
+import com.pi4j.io.gpio.impl.PinImpl;
 import com.pi4j.io.i2c.I2CFactory;
-import com.pi4j.wiringpi.Gpio;
 import java.io.IOException;
+import java.util.EnumSet;
 
 /**
  *
@@ -30,12 +36,26 @@ public class GrovePiExtra {
         Led led = new Led(3);
         Led led2 = new Led(5);
         AnalogSensor sensor = new AnalogSensor(3, 4);
+        
+        PinMode.allOutput();
+        EnumSet<PinMode> pins = PinMode.allOutput();
+        PinImpl p = new PinImpl("Paulo_Provider", 0, "Paulo_name", pins);
+        GpioControllerImpl imp = new GpioControllerImpl();
+        RaspiGpioProvider stuff = new RaspiGpioProvider();
+        
+        GpioPinImpl gpiopwm = new GpioPinImpl(imp, stuff, p);
+        
+        Thing thing = new Thing(gpiopwm);
+        
+        thing.buzz(500, 200);
 
 //        buzz.setVolume(10);
 //        Thread.sleep(1000);
 //        buzz.setVolume(100);
 //        buzz.turnOff();
         
+
+
 //        buzz.setFrequency(1);
 //        buzz.turnOn();
 //        Thread.sleep(1000);
@@ -45,8 +65,8 @@ public class GrovePiExtra {
 //        led.turnOn();
 //        Thread.sleep(1000);
 
-Gpio.analogWrite(3, 50);
-Thread.sleep(1000);
+//Gpio.analogWrite(3, 50);
+//Thread.sleep(1000);
 
             //System.out.println("wiringPiSetUp():  "+wiringPiSetup());
             //System.out.println("wiringPiSetUp():  "+wiringPiSetupGpio());

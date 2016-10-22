@@ -11,13 +11,6 @@ import java.io.IOException;
 import com.dexterind.grovepi.sensors.base.*;
 import com.pi4j.io.i2c.I2CFactory;
 
-import static com.pi4j.wiringpi.Gpio.PWM_OUTPUT;
-import static com.pi4j.wiringpi.Gpio.analogWrite;
-import static com.pi4j.wiringpi.Gpio.digitalWrite;
-import static com.pi4j.wiringpi.Gpio.pinMode;
-import com.pi4j.wiringpi.SoftPwm;
-
-
 /**
  *
  * @author Paulo Nunes
@@ -30,21 +23,6 @@ public class Buzzer extends AnalogSensor{
     public Buzzer(int pin) throws IOException, InterruptedException, I2CFactory.UnsupportedBusNumberException{
         super(pin, MAX_VOLUME + 1);
         this.pin = pin;
-    }
-    
-    public void setFrequency(int frequency) throws InterruptedException{
-        SoftPwm.softPwmWrite(pin, frequency);
-        analogWrite(pin, frequency);
-        Thread.sleep(1000);
-        
-                //Gpio.wiringPiSetup();
-        SoftPwm.softPwmCreate(pin, 0, 100);
-        pinMode(pin, PWM_OUTPUT);
-        //this.pin = pin;
-        
-        digitalWrite(pin, 250);
-        Thread.sleep(1000);
-        
     }
     
     public void turnOn() throws IOException{
