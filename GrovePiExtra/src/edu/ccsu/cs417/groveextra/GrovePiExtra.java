@@ -45,7 +45,7 @@ public class GrovePiExtra {
 //        led.turnOn();
 //        Thread.sleep(1000);
 
-
+Gpio.analogWrite(3, 50);
 
 
             //System.out.println("wiringPiSetUp():  "+wiringPiSetup());
@@ -61,14 +61,14 @@ public class GrovePiExtra {
             //Thread.sleep(100);
             
             
-            for(int i = 0; i<200; i+=2){            
-                System.out.println(i);
-                for(int j = 0; j<5; j++){
-                    sensor.write(255);
-                    Thread.sleep(i);
-                    sensor.write(0);
-                }
-            }
+//            for(int i = 0; i<200; i+=2){            
+//                System.out.println(i);
+//                for(int j = 0; j<5; j++){
+//                    sensor.write(255);
+//                    Thread.sleep(i);
+//                    sensor.write(0);
+//                }
+//            }
             
 //            sensor.write(10);
 //            System.out.println("10");
