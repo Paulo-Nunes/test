@@ -60,40 +60,50 @@ public class GrovePiExtra {
             //System.out.println("softPwmCreate():  "+softPwmCreate(3, 40, 100));
             //Thread.sleep(100);
             
-            sensor.write(10);
-            System.out.println("10");
-            Thread.sleep(1000);
             
-            sensor.write(20);
-            System.out.println("20");
-            Thread.sleep(1000);
+            for(int i = 0; i<200; i+=2){            
+                System.out.println(i);
+                for(int j = 0; j<5; j++){
+                    sensor.write(255);
+                    Thread.sleep(i);
+                    sensor.write(255);
+                }
+            }
             
-            sensor.write(50);
-            System.out.println("50");
-            Thread.sleep(1000);
-            
-            sensor.write(70);
-            System.out.println("70");
-            Thread.sleep(1000);
-            
-            
-            sensor.write(100);
-            System.out.println("100");
-            Thread.sleep(1000);
-            
-            sensor.write(150);
-            System.out.println("150");
-            Thread.sleep(1000);
-            
-            sensor.write(255);
-            System.out.println("255");
-            Thread.sleep(1000);
-            
-            sensor.write(400);
-            System.out.println("400");
-            Thread.sleep(1000);
-            System.out.println("400");
-            sensor.write(0);
+//            sensor.write(10);
+//            System.out.println("10");
+//            Thread.sleep(1000);
+//
+//            sensor.write(20);
+//            System.out.println("20");
+//            Thread.sleep(1000);
+//
+//            sensor.write(50);
+//            System.out.println("50");
+//            Thread.sleep(1000);
+//
+//            sensor.write(70);
+//            System.out.println("70");
+//            Thread.sleep(1000);
+//
+//
+//            sensor.write(100);
+//            System.out.println("100");
+//            Thread.sleep(1000);
+//
+//            sensor.write(150);
+//            System.out.println("150");
+//            Thread.sleep(1000);
+//
+//            sensor.write(255);
+//            System.out.println("255");
+//            Thread.sleep(1000);
+//
+//            sensor.write(400);
+//            System.out.println("400");
+//            Thread.sleep(1000);
+//            System.out.println("400");
+//            sensor.write(0);
             
             
             
