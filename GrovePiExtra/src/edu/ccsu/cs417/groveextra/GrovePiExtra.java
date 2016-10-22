@@ -90,6 +90,7 @@ public class GrovePiExtra {
             Gpio.analogWrite(3,1024);
             System.out.println("1024");
             Thread.sleep(1000);
+            Gpio.analogWrite(3,0);
             
             
             
