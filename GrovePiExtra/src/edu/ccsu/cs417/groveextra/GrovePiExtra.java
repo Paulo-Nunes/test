@@ -62,7 +62,7 @@ public class GrovePiExtra {
         System.out.println("Thing thing = new Thing(gpiopwm);");
         
         
-        thing.buzz(500, 200);
+        thing.buzz(500, 2000);
 
 //        buzz.setVolume(10);
 //        Thread.sleep(1000);
