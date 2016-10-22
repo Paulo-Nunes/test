@@ -40,7 +40,7 @@ public class GrovePiExtra {
         PinMode.allOutput();
         System.out.println("PinMode.allOutput();");
         
-        EnumSet<PinMode> pins = PinMode.allOutput();
+        EnumSet<PinMode> pins = PinMode.all();
         System.out.println("EnumSet<PinMode> pins = PinMode.allOutput();");
         
         PinImpl pinImpl = new PinImpl("Paulo_Provider", 0, "Paulo_name", pins);
@@ -62,7 +62,7 @@ public class GrovePiExtra {
         System.out.println("Thing thing = new Thing(gpiopwm);");
         
         
-        thing.buzz(500, 2000);
+        thing.buzz(99, 2000);
 
 //        buzz.setVolume(10);
 //        Thread.sleep(1000);
