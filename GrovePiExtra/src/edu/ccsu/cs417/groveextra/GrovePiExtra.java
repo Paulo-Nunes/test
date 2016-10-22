@@ -89,9 +89,10 @@ public class GrovePiExtra {
             System.out.println("255");
             Thread.sleep(1000);
             
-            sensor.write(1024);
-            System.out.println("1024");
+            sensor.write(400);
+            System.out.println("400");
             Thread.sleep(1000);
+            System.out.println("400");
             sensor.write(0);
             
             
