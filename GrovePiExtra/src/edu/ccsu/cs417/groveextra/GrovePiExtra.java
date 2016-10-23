@@ -62,7 +62,26 @@ public class GrovePiExtra {
 //////////        thing.buzz(99, 2000);
 
 pinMode(3, OUTPUT);
+analogWrite(0, 255);
+analogWrite(1, 255);
+analogWrite(2, 255);
 analogWrite(3, 255);
+analogWrite(4, 255);
+analogWrite(5, 255);
+analogWrite(6, 255);
+analogWrite(7, 255);
+analogWrite(8, 255);
+analogWrite(9, 255);
+analogWrite(10, 255);
+analogWrite(11, 255);
+analogWrite(12, 255);
+analogWrite(13, 255);
+analogWrite(14, 255);
+analogWrite(15, 255);
+analogWrite(16, 255);
+analogWrite(17, 255);
+analogWrite(18, 255);
+
 delay(2000);
 
 //        buzz.setVolume(10);
