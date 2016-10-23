@@ -8,9 +8,10 @@ package edu.ccsu.cs417.groveextra;
 import com.dexterind.grovepi.sensors.Buzzer;
 import com.dexterind.grovepi.sensors.Led;
 import com.dexterind.grovepi.sensors.base.AnalogSensor;
-import com.pi4j.io.gpio.BananaPiGpioProvider;
 import com.pi4j.io.i2c.I2CFactory;
+import static com.pi4j.wiringpi.Gpio.OUTPUT;
 import static com.pi4j.wiringpi.Gpio.analogWrite;
+import static com.pi4j.wiringpi.Gpio.pinMode;
 import java.io.IOException;
 
 /**
@@ -59,7 +60,7 @@ public class GrovePiExtra {
 //////////        
 //////////        thing.buzz(99, 2000);
 
-
+pinMode(3, OUTPUT);
 analogWrite(3, 500);
 Thread.sleep(2000);
 
