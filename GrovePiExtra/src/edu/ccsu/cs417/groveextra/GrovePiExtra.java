@@ -60,7 +60,7 @@ public class GrovePiExtra {
 //////////        thing.buzz(99, 2000);
 
 
-analogWrite(3, 200);
+analogWrite(3, 500);
 Thread.sleep(2000);
 
 //        buzz.setVolume(10);
