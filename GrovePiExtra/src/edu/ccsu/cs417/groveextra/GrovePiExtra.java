@@ -25,7 +25,7 @@ public class GrovePiExtra {
         this.boardNumber = boardNumber;
     }
 
-    public void runDemo(BananaPiGpioProvider provider) throws IOException, InterruptedException, I2CFactory.UnsupportedBusNumberException {
+    public void runDemo() throws IOException, InterruptedException, I2CFactory.UnsupportedBusNumberException {
         
         Buzzer buzz = new Buzzer(boardNumber);
         Led led = new Led(3);
@@ -223,7 +223,7 @@ Thread.sleep(2000);
     }
 
     public static void main(String[] args) {
-        try {BananaPiGpioProvider provider = new BananaPiGpioProvider();
+        try {//BananaPiGpioProvider provider = new BananaPiGpioProvider();
             // Default is D3
             //Grovepi grovePi = new Grovepi();
             int boardNumber = 3;
@@ -231,7 +231,7 @@ Thread.sleep(2000);
                 boardNumber = Integer.parseInt(args[0]);
             }
             GrovePiExtra ledDemo = new GrovePiExtra(boardNumber);
-            ledDemo.runDemo(provider);
+            ledDemo.runDemo();
         } catch (Exception e) {
             e.printStackTrace();
         }
