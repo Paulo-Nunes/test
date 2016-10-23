@@ -7,16 +7,11 @@ package edu.ccsu.cs417.groveextra;
 
 import com.dexterind.grovepi.sensors.Buzzer;
 import com.dexterind.grovepi.sensors.Led;
-import com.dexterind.grovepi.sensors.Thing;
 import com.dexterind.grovepi.sensors.base.AnalogSensor;
 import com.pi4j.io.gpio.BananaPiGpioProvider;
-import com.pi4j.io.gpio.PinMode;
-import com.pi4j.io.gpio.impl.GpioControllerImpl;
-import com.pi4j.io.gpio.impl.GpioPinImpl;
-import com.pi4j.io.gpio.impl.PinImpl;
 import com.pi4j.io.i2c.I2CFactory;
+import static com.pi4j.wiringpi.Gpio.analogWrite;
 import java.io.IOException;
-import java.util.EnumSet;
 
 /**
  *
@@ -37,32 +32,36 @@ public class GrovePiExtra {
         Led led2 = new Led(5);
         AnalogSensor sensor = new AnalogSensor(3, 4);
         
-        PinMode.allOutput();
-        System.out.println("PinMode.allOutput();");
-        
-        EnumSet<PinMode> pins = PinMode.all();
-        System.out.println("EnumSet<PinMode> pins = PinMode.allOutput();");
-        
-        PinImpl pinImpl = new PinImpl("Paulo_Provider", 0, "Paulo_name", pins);
-        System.out.println("PinImpl pinImpl = new PinImpl(\"Paulo_Provider\", 0, \"Paulo_name\", pins);");
-        
-        
-        GpioControllerImpl gpioController = new GpioControllerImpl();
-        System.out.println("GpioControllerImpl gpioController = new GpioControllerImpl();");
-        
-        //BananaPiGpioProvider provider = new BananaPiGpioProvider();
-        System.out.println("BananaPiGpioProvider provider = new BananaPiGpioProvider();");
-        
-        
-        GpioPinImpl gpiopwm = new GpioPinImpl(gpioController, provider, pinImpl);
-        System.out.println("GpioPinImpl gpiopwm = new GpioPinImpl(gpioController, provider, pinImpl);");
-        
-        
-        Thing thing = new Thing(gpiopwm);
-        System.out.println("Thing thing = new Thing(gpiopwm);");
-        
-        
-        thing.buzz(99, 2000);
+//////////        PinMode.allOutput();
+//////////        System.out.println("PinMode.allOutput();");
+//////////        
+//////////        EnumSet<PinMode> pins = PinMode.allOutput();
+//////////        System.out.println("EnumSet<PinMode> pins = PinMode.allOutput();");
+//////////        
+//////////        PinImpl pinImpl = new PinImpl("Paulo_Provider", 0, "Paulo_name", pins);
+//////////        System.out.println("PinImpl pinImpl = new PinImpl(\"Paulo_Provider\", 0, \"Paulo_name\", pins);");
+//////////        
+//////////        
+//////////        GpioControllerImpl gpioController = new GpioControllerImpl();
+//////////        System.out.println("GpioControllerImpl gpioController = new GpioControllerImpl();");
+//////////        
+//////////        //BananaPiGpioProvider provider = new BananaPiGpioProvider();
+//////////        System.out.println("BananaPiGpioProvider provider = new BananaPiGpioProvider();");
+//////////        
+//////////        
+//////////        GpioPinImpl gpiopwm = new GpioPinImpl(gpioController, provider, pinImpl);
+//////////        System.out.println("GpioPinImpl gpiopwm = new GpioPinImpl(gpioController, provider, pinImpl);");
+//////////        
+//////////        
+//////////        Thing thing = new Thing(gpiopwm);
+//////////        System.out.println("Thing thing = new Thing(gpiopwm);");
+//////////        
+//////////        
+//////////        thing.buzz(99, 2000);
+
+
+analogWrite(3, 200);
+Thread.sleep(2000);
 
 //        buzz.setVolume(10);
 //        Thread.sleep(1000);

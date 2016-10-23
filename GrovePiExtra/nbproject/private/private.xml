@@ -3,12 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/Paulo/Documents/cs417/git/GPE/GrovePiExtra/src/com/dexterind/grovepi/sensors/Buzzer.java</file>
             <file>file:/C:/Users/Paulo/Documents/cs417/git/GPE/GrovePiExtra/src/com/dexterind/grovepi/sensors/base/AnalogSensor.java</file>
             <file>file:/C:/Users/Paulo/Documents/cs417/git/GPE/GrovePiExtra/src/com/dexterind/grovepi/events/SensorEvent.java</file>
-            <file>file:/C:/Users/Paulo/Documents/cs417/git/GPE/GrovePiExtra/src/com/dexterind/grovepi/sensors/Led.java</file>
             <file>file:/C:/Users/Paulo/Documents/cs417/git/GPE/GrovePiExtra/src/com/dexterind/grovepi/sensors/base/Sensor.java</file>
+            <file>file:/C:/Users/Paulo/Documents/cs417/git/GPE/GrovePiExtra/src/com/dexterind/grovepi/sensors/Led.java</file>
             <file>file:/C:/Users/Paulo/Documents/cs417/git/GPE/GrovePiExtra/src/com/dexterind/grovepi/Board.java</file>
             <file>file:/C:/Users/Paulo/Documents/cs417/git/GPE/GrovePiExtra/src/com/dexterind/grovepi/sensors/base/DigitalSensor.java</file>
+            <file>file:/C:/Users/Paulo/Documents/cs417/git/GPE/GrovePiExtra/src/com/dexterind/grovepi/sensors/base/SensorStatus.java</file>
+            <file>file:/C:/Users/Paulo/Documents/cs417/git/GPE/GrovePiExtra/src/com/dexterind/grovepi/sensors/Thing.java</file>
             <file>file:/C:/Users/Paulo/Documents/cs417/git/GPE/GrovePiExtra/src/edu/ccsu/cs417/groveextra/GrovePiExtra.java</file>
             <file>file:/C:/Users/Paulo/Documents/cs417/git/GPE/GrovePiExtra/src/com/dexterind/grovepi/Grovepi.java</file>
         </group>
