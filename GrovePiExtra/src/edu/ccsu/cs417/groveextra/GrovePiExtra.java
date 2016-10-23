@@ -11,6 +11,7 @@ import com.dexterind.grovepi.sensors.base.AnalogSensor;
 import com.pi4j.io.i2c.I2CFactory;
 import static com.pi4j.wiringpi.Gpio.OUTPUT;
 import static com.pi4j.wiringpi.Gpio.analogWrite;
+import static com.pi4j.wiringpi.Gpio.delay;
 import static com.pi4j.wiringpi.Gpio.pinMode;
 import java.io.IOException;
 
@@ -61,8 +62,8 @@ public class GrovePiExtra {
 //////////        thing.buzz(99, 2000);
 
 pinMode(3, OUTPUT);
-analogWrite(3, 500);
-Thread.sleep(2000);
+analogWrite(3, 255);
+delay(2000);
 
 //        buzz.setVolume(10);
 //        Thread.sleep(1000);
