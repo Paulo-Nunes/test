@@ -65,7 +65,7 @@ public class GrovePiExtra {
 pwmSetMode(PWM_MODE_MS);
 pwmSetClock(4095);
 pwmSetRange(2);
-analogWrite(3, 100);
+buzz.turnOn();
 Thread.sleep(1000);
 //pinMode(0, OUTPUT);
 //pinMode(1, OUTPUT);
