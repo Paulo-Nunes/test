@@ -66,7 +66,7 @@ public class GrovePiExtra {
 System.out.print(Gpio.millis());
 Gpio.wiringPiSetup();
 Thread.sleep(100);
-Gpio.gpioClockSet(3, 100);
+//Gpio.gpioClockSet(3, 100);
 Thread.sleep(100);
 System.out.print(Gpio.getAlt(3));
 Thread.sleep(100);
