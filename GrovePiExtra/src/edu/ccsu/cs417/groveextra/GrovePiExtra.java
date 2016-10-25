@@ -9,10 +9,10 @@ import com.dexterind.grovepi.sensors.Buzzer;
 import com.dexterind.grovepi.sensors.Led;
 import com.dexterind.grovepi.sensors.base.AnalogSensor;
 import com.pi4j.io.i2c.I2CFactory;
-import static com.pi4j.wiringpi.Gpio.OUTPUT;
-import static com.pi4j.wiringpi.Gpio.analogWrite;
-import static com.pi4j.wiringpi.Gpio.delay;
-import static com.pi4j.wiringpi.Gpio.pinMode;
+import static com.pi4j.wiringpi.Gpio.PWM_MODE_MS;
+import static com.pi4j.wiringpi.Gpio.pwmSetClock;
+import static com.pi4j.wiringpi.Gpio.pwmSetMode;
+import static com.pi4j.wiringpi.Gpio.pwmSetRange;
 import java.io.IOException;
 
 /**
@@ -61,48 +61,53 @@ public class GrovePiExtra {
 //////////        
 //////////        thing.buzz(99, 2000);
 
-pinMode(0, OUTPUT);
-pinMode(1, OUTPUT);
-pinMode(2, OUTPUT);
-pinMode(3, OUTPUT);
-pinMode(4, OUTPUT);
-pinMode(5, OUTPUT);
-pinMode(6, OUTPUT);
-pinMode(7, OUTPUT);
-pinMode(8, OUTPUT);
-pinMode(9, OUTPUT);
-pinMode(10, OUTPUT);
-pinMode(11, OUTPUT);
-pinMode(12, OUTPUT);
-pinMode(13, OUTPUT);
-pinMode(14, OUTPUT);
-pinMode(15, OUTPUT);
-pinMode(16, OUTPUT);
-pinMode(17, OUTPUT);
-pinMode(18, OUTPUT);
-
-
-analogWrite(0, 255);
-analogWrite(1, 255);
-analogWrite(2, 255);
-analogWrite(3, 255);
-analogWrite(4, 255);
-analogWrite(5, 255);
-analogWrite(6, 255);
-analogWrite(7, 255);
-analogWrite(8, 255);
-analogWrite(9, 255);
-analogWrite(10, 255);
-analogWrite(11, 255);
-analogWrite(12, 255);
-analogWrite(13, 255);
-analogWrite(14, 255);
-analogWrite(15, 255);
-analogWrite(16, 255);
-analogWrite(17, 255);
-analogWrite(18, 255);
-
-delay(2000);
+pwmSetMode(PWM_MODE_MS);
+pwmSetClock(4095);
+pwmSetRange(4096);
+buzz.turnOn();
+Thread.sleep(1000);
+//pinMode(0, OUTPUT);
+//pinMode(1, OUTPUT);
+//pinMode(2, OUTPUT);
+//pinMode(3, OUTPUT);
+//pinMode(4, OUTPUT);
+//pinMode(5, OUTPUT);
+//pinMode(6, OUTPUT);
+//pinMode(7, OUTPUT);
+//pinMode(8, OUTPUT);
+//pinMode(9, OUTPUT);
+//pinMode(10, OUTPUT);
+//pinMode(11, OUTPUT);
+//pinMode(12, OUTPUT);
+//pinMode(13, OUTPUT);
+//pinMode(14, OUTPUT);
+//pinMode(15, OUTPUT);
+//pinMode(16, OUTPUT);
+//pinMode(17, OUTPUT);
+//pinMode(18, OUTPUT);
+//
+//
+//analogWrite(0, 255);
+//analogWrite(1, 255);
+//analogWrite(2, 255);
+//analogWrite(3, 255);
+//analogWrite(4, 255);
+//analogWrite(5, 255);
+//analogWrite(6, 255);
+//analogWrite(7, 255);
+//analogWrite(8, 255);
+//analogWrite(9, 255);
+//analogWrite(10, 255);
+//analogWrite(11, 255);
+//analogWrite(12, 255);
+//analogWrite(13, 255);
+//analogWrite(14, 255);
+//analogWrite(15, 255);
+//analogWrite(16, 255);
+//analogWrite(17, 255);
+//analogWrite(18, 255);
+//
+//delay(2000);
 
 //        buzz.setVolume(10);
 //        Thread.sleep(1000);
