@@ -10,6 +10,7 @@ import com.dexterind.grovepi.sensors.Led;
 import com.dexterind.grovepi.sensors.base.AnalogSensor;
 import com.pi4j.io.i2c.I2CFactory;
 import static com.pi4j.wiringpi.Gpio.PWM_MODE_MS;
+import static com.pi4j.wiringpi.Gpio.analogWrite;
 import static com.pi4j.wiringpi.Gpio.pwmSetClock;
 import static com.pi4j.wiringpi.Gpio.pwmSetMode;
 import static com.pi4j.wiringpi.Gpio.pwmSetRange;
@@ -64,7 +65,7 @@ public class GrovePiExtra {
 pwmSetMode(PWM_MODE_MS);
 pwmSetClock(2095);
 pwmSetRange(2096);
-buzz.turnOn();
+analogWrite(3, 100);
 Thread.sleep(1000);
 //pinMode(0, OUTPUT);
 //pinMode(1, OUTPUT);
