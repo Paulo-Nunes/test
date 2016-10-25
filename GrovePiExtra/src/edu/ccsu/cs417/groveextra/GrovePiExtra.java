@@ -63,14 +63,21 @@ public class GrovePiExtra {
 //////////        
 //////////        
 //////////        thing.buzz(99, 2000);
-Gpio.wiringPiSetup();
 System.out.print(Gpio.millis());
-Gpio.gpioClockSet(3, 10);
+Gpio.wiringPiSetup();
+Thread.sleep(100);
+Gpio.gpioClockSet(3, 100);
+Thread.sleep(100);
 System.out.print(Gpio.getAlt(3));
+Thread.sleep(100);
 pwmSetMode(PWM_MODE_MS);
+Thread.sleep(100);
 pwmSetClock(4095);
+Thread.sleep(100);
 pwmSetRange(4096);
+Thread.sleep(100);
 Gpio.pwmWrite(3, 100);
+Thread.sleep(100);
 buzz.turnOn();
 Thread.sleep(1000);
 //pinMode(0, OUTPUT);
